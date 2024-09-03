@@ -7,6 +7,15 @@ export default authMiddleware({
   publicRoutes: ["/api/clerk"]
 });
 
+// 导出一个配置对象
 export const config = {
-  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
+  // 定义路由匹配规则
+  matcher: [
+    // 匹配所有非文件和非_next路径的URL
+    "/((?!.+\\.[\\w]+$|_next).*)",
+    // 默认路径匹配规则
+    "/",
+    // 匹配API和trpc相关路径
+    "/(api|trpc)(.*)",
+  ],
 };
